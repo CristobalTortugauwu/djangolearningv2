@@ -10,7 +10,7 @@ def myview(request):
     #else:
     #    resp.set_cookie('visit', 1)        
     num_visitas = request.session.get('visit',0)+1
-    resp = HttpResponse('haz visitado esta página='+str(num_visitas))
+    resp = HttpResponse('view count='+str(num_visitas))
     resp.set_cookie('dj4e_cookie', '0e6a5ac6', max_age=1000)
     print(request.COOKIES)
     request.session['visit'] = num_visitas

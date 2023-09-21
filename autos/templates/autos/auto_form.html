@@ -1,0 +1,12 @@
+
+{% extends "base_bootstrap.html" %}
+{% block content%}
+<h2>Create a new Make</h2>
+<form action="{% url 'autos:auto_create' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <br></br>
+    <input type="submit" value="Done :D">
+</form>
+<p><a href="{% url 'autos:all' %}">Volver a la pagina principal</a></p>
+{% endblock %}
