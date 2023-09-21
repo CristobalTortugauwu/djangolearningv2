@@ -1,14 +1,14 @@
 {% extends "base_bootstrap.html" %}
 
 {% block content %}
-<h1>Lista de Autos</h1>
+<h1>Auto List</h1>
 <ul>
     {% if auto_list %}
     {% for auto in auto_list %}
         <li> this is the {{auto.nickname}} (make by {{auto.make}}), and it
             has an amount of {{auto.mileage}} of miles (
-            <a href="{% url 'autos:auto_update' auto.id %}"> update</a>  |   
-            <a href="{% url 'autos:auto_delete' auto.id %}"> delete</a>)
+            <a href="{% url 'autos:auto_update' auto.id %}"> Update</a>  |   
+            <a href="{% url 'autos:auto_delete' auto.id %}"> Delete</a>)
         </li>
     {% endfor %}
     {% else %}
@@ -17,9 +17,9 @@
     <br>
     </br>
     <p><a href="{% url 'autos:auto_create' %}"> 
-        Añade un auto
+        Add an auto
     </p>
-    <p><a href="{% url 'autos:make_list' %}">Ver makes</a> ({{make_count}}) |
-    <a href="{% url 'autos:make_create' %}">agregar un make</a></p>
+    <p><a href="{% url 'autos:make_list' %}">View makes</a> ({{make_count}}) |
+    <a href="{% url 'autos:make_create' %}">Add a make</a></p>
 </ul>
 {% endblock %}
