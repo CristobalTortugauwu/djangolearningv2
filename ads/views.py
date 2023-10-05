@@ -5,7 +5,7 @@ from ads.owner import OwnerListView, OwnerDetailView, OwnerCreateView, OwnerUpda
 class AdListView(OwnerListView):
     model = Ad
     # By convention:
-    # template_name = "myarts/ad_list.html"
+    template_name = "ads/ad_list.html"
 
 
 class AdDetailView(OwnerDetailView):
@@ -14,11 +14,11 @@ class AdDetailView(OwnerDetailView):
 class AdCreateView(OwnerCreateView):
     model = Ad
     # List the fields to copy from the Ad model to the Ad form
-    fields = ['title', 'text']
+    fields = ['title', 'text', 'price']
 
 class AdUpdateView(OwnerUpdateView):
     model = Ad
-    fields = ['title', 'text']
+    fields = ['title', 'text', 'price']
     # This would make more sense
     # fields_exclude = ['owner', 'created_at', 'updated_at']
 
